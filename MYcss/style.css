@@ -4,29 +4,8 @@
 /* Цвет конопок, вспомогательный цвет  #ffffff */
 /* основной синий цвет, для ховерка и фокуса  #2196f3 */
 
-/* Project fonts */
-/* font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 900;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 700;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 400;
-
-font-family: Raleway;
-font-style: normal;
-font-weight: 700; */
-
 :root {
-  --primary-text-color: #212121;
+  /* --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --third-text-color: #ffffff;
   --main-blue-color: #2196f3;
@@ -47,30 +26,30 @@ font-weight: 700; */
   --icon-main-color: #afb1b8;
 
   --transition-timing-formula: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-duration: 250ms;
+  --transition-duration: 250ms; */
 }
 
 /* *for all page  */
-body {
+/* body {
   font-family: var(--main-font-family);
-}
+} */
 
-h2,
+/* h2,
 h3 {
   color: var(--primary-text-color);
-}
+} */
 
 /* *main container */
-.container {
+/* .container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-}
+} */
 
 /* *Спрятать текст h2/h1 (не работает в геометрии), но оставить его для читалок */
-.visually-hidden {
+/* .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -79,27 +58,27 @@ h3 {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
 /* !header */
 /* *Flex items for header */
-.header {
+/* .header {
   border-bottom: 1px solid var(--border-header-color);
   background: var(--bg-third-color);
-}
+} */
 
-.nav-flex {
+/* .nav-flex {
   display: flex;
   align-items: center;
-}
+} */
 
-.header-flex {
+/* .header-flex {
   display: flex;
   align-items: center;
-}
+} */
 
 /* ?Logo */
-.logo {
+/* .logo {
   font-family: var(--secondary-font-family);
   font-weight: 700;
   font-size: 26px;
@@ -114,11 +93,11 @@ h3 {
 
 .logo .studio-black {
   color: var(--primary-text-color);
-}
+} */
 /* ?CLOSED Logo */
 
 /* ?nav-list */
-.nav-list {
+/* .nav-list {
   display: flex;
   margin-top: 0;
   margin-left: 93px;
@@ -131,41 +110,41 @@ h3 {
   line-height: 1.14;
   letter-spacing: 0.02em;
   list-style: none;
-}
+} */
 
-.nav-list > .item:not(:last-child) {
+/* .nav-list > .item:not(:last-child) {
   margin-right: 50px;
-}
+} */
 
-.nav-list .link {
+/* .nav-list .link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
 
   color: var(--primary-text-color);
-  text-decoration: none;
+  text-decoration: none; */
 
   /* position */
-  position: relative;
+  /* position: relative; */
 
   /* Переход CSS */
-  transition: color var(--transition-duration) var(--transition-timing-formula);
+  /* transition: color var(--transition-duration) var(--transition-timing-formula); */
 }
 
-.nav-list .link:hover,
+/* .nav-list .link:hover,
 .nav-list .link:focus {
   color: var(--main-blue-color);
-}
+} */
 
 /* active page */
-.nav-list .link.active {
+/* .nav-list .link.active {
   color: var(--main-blue-color);
-}
+} */
 
 /* *position (after) for active link*/
-.nav-list .link.active:after {
+/* .nav-list .link.active:after { */
   /* position */
-  position: absolute;
+  /* position: absolute;
   bottom: -1px;
   left: 0;
 
@@ -175,17 +154,17 @@ h3 {
   width: 100%;
 
   border-radius: 2px;
-  background: #2196f3;
+  background: #2196f3; */
 }
 /* ?CLOSED nav-list */
 
 /* ?contacts info */
-.contacts {
+/* .contacts {
   margin-left: auto;
   display: flex;
   align-items: center;
-}
-
+} */
+/* 
 .contacts .link {
   display: inline-flex;
   align-items: center;
@@ -197,30 +176,30 @@ h3 {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; */
 
   /* для заполнeния svg */
-  fill: var(--secondary-text-color);
+  /* fill: var(--secondary-text-color); */
 
   /* Переход CSS */
-  transition: color var(--transition-duration) var(--transition-timing-formula),
+  /* transition: color var(--transition-duration) var(--transition-timing-formula),
     fill var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
-.contacts .link:hover,
+/* .contacts .link:hover,
 .contacts .link:focus {
   color: var(--main-blue-color);
-  fill: var(--main-blue-color);
+  fill: var(--main-blue-color); */
 }
 
-.contacts .link:not(:last-child) {
-  margin-right: 30px;
+/* .contacts .link:not(:last-child) {
+  margin-right: 30px; */
 }
 
 /* Оформляем svg */
-.contacts-icon {
+/* .contacts-icon {
   margin-right: 10px;
-}
+} */
 
 /* !CLOSED contacts info */
 /* !CLOSED header */

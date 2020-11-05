@@ -1,0 +1,18 @@
+/* *for all page  */
+body {
+  font-family: $main-font-family;
+}
+
+h2,
+h3 {
+  color: $primary-text-color;
+}
+
+/* *main container */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
