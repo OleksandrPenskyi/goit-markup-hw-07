@@ -3,9 +3,8 @@
 @import './base/base';
 
 // header for both pages
-@import './components/header/logo';
 @import './components/header/header-section';
-@import './components/header/nav-list';
+@import './components/header/navigation';
 @import './components/header/contacts';
 
 // main for index.html

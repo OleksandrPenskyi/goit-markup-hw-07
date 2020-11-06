@@ -54,23 +54,6 @@ img {
   padding-right: 15px;
 }
 
-.logo {
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-}
-
-.logo .web {
-  color: #2196f3;
-}
-
-.logo .studio-black {
-  color: #212121;
-}
-
 .header {
   border-bottom: 1px solid #ececec;
   background: #ffffff;
@@ -94,6 +77,20 @@ img {
           align-items: center;
 }
 
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: #2196f3;
+}
+
+.logo .studio-black {
+  color: #212121;
+}
+
 .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,7 +112,6 @@ img {
 }
 
 .nav-list .link {
-  /* position */
   position: relative;
   display: block;
   padding-top: 32px;
@@ -134,7 +130,7 @@ img {
 /* active page */
 .nav-list .link.active {
   color: #2196f3;
-  /* *position (after) for active link*/
+  /* position (after) for active link*/
 }
 
 .nav-list .link.active:after {
@@ -190,7 +186,7 @@ img {
   fill: #2196f3;
 }
 
-/* Оформляем svg */
+/* Отступ SVG от ссылки */
 .contacts .icon {
   margin-right: 10px;
 }
