@@ -4,8 +4,8 @@
 /* Цвет конопок, вспомогательный цвет  #ffffff */
 /* основной синий цвет, для ховерка и фокуса  #2196f3 */
 
-:root {
-  /* --primary-text-color: #212121;
+/* :root { 
+  --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --third-text-color: #ffffff;
   --main-blue-color: #2196f3;
@@ -26,8 +26,8 @@
   --icon-main-color: #afb1b8;
 
   --transition-timing-formula: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-duration: 250ms; */
-}
+  --transition-duration: 250ms; 
+} */
 
 /* *for all page  */
 /* body {
@@ -124,12 +124,12 @@ h3 {
   color: var(--primary-text-color);
   text-decoration: none; */
 
-  /* position */
-  /* position: relative; */
+/* position */
+/* position: relative; */
 
-  /* Переход CSS */
-  /* transition: color var(--transition-duration) var(--transition-timing-formula); */
-}
+/* Переход CSS */
+/* transition: color var(--transition-duration) var(--transition-timing-formula); 
+}*/
 
 /* .nav-list .link:hover,
 .nav-list .link:focus {
@@ -143,8 +143,8 @@ h3 {
 
 /* *position (after) for active link*/
 /* .nav-list .link.active:after { */
-  /* position */
-  /* position: absolute;
+/* position */
+/* position: absolute;
   bottom: -1px;
   left: 0;
 
@@ -154,8 +154,8 @@ h3 {
   width: 100%;
 
   border-radius: 2px;
-  background: #2196f3; */
-}
+  background: #2196f3; 
+}*/
 /* ?CLOSED nav-list */
 
 /* ?contacts info */
@@ -178,24 +178,23 @@ h3 {
   line-height: 1.14;
   letter-spacing: 0.02em; */
 
-  /* для заполнeния svg */
-  /* fill: var(--secondary-text-color); */
+/* для заполнeния svg */
+/* fill: var(--secondary-text-color); */
 
-  /* Переход CSS */
-  /* transition: color var(--transition-duration) var(--transition-timing-formula),
+/* Переход CSS */
+/* transition: color var(--transition-duration) var(--transition-timing-formula),
     fill var(--transition-duration) var(--transition-timing-formula);
 } */
 
 /* .contacts .link:hover,
 .contacts .link:focus {
   color: var(--main-blue-color);
-  fill: var(--main-blue-color); */
-}
+  fill: var(--main-blue-color); 
+}*/
 
 /* .contacts .link:not(:last-child) {
-  margin-right: 30px; */
-}
-
+  margin-right: 30px; 
+}*/
 /* Оформляем svg */
 /* .contacts-icon {
   margin-right: 10px;
@@ -206,11 +205,11 @@ h3 {
 
 /* !main part */
 /* !hero */
-.hero {
+/* .hero {
   text-align: center;
-}
+} */
 
-.hero-container {
+/* .hero-container {
   max-width: 1600px;
   height: 600px;
   margin-left: auto;
@@ -221,24 +220,24 @@ h3 {
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/main-bg.jpg');
   background-position: center;
-}
+} */
 
-.hero .title {
+/* .hero .title {
   margin-top: 0;
   margin-bottom: 30px;
 
   color: var(--third-text-color);
-}
+} */
 
-.hero .title {
+/* .hero .title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
+} */
 
-.hero .open-btn {
+/* .hero .open-btn {
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -254,44 +253,44 @@ h3 {
   line-height: 1.87;
   letter-spacing: 0.06em;
   text-decoration: none;
-}
+} */
 
 /* *modal window */
-.backdrop {
-  /* Position */
-  position: fixed;
+/* .backdrop { */
+/* Position */
+/* position: fixed;
   top: 0;
   left: 0;
 
   width: 100%;
-  height: 100%;
+  height: 100%; */
 
-  /* Чтобы модальное окно было выше других эллементов страницы */
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.2);
+/* Чтобы модальное окно было выше других эллементов страницы */
+/* z-index: 100;
+  background: rgba(0, 0, 0, 0.2); */
 
-  /* При появлении backdrop, фон появляется плавно */
-  opacity: 1;
+/* При появлении backdrop, фон появляется плавно */
+/* opacity: 1;
   transition: opacity var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
-.backdrop.is-hidden {
-  opacity: 0;
+/* .backdrop.is-hidden { */
+/* opacity: 0; */
 
-  /* чтобы пропадала подложка backdrop*/
-  pointer-events: none;
-}
+/* чтобы пропадала подложка backdrop*/
+/* pointer-events: none; */
+/* } */
 
 /* *При выключенном backdrop, свойства modal такие */
-.backdrop.is-hidden .modal {
+/* .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.2);
-}
+} */
 
 /* *Modal активное */
-.modal {
-  /* Position */
-  /* Центрируем */
-  position: absolute;
+/* .modal { */
+/* Position */
+/* Центрируем */
+/* position: absolute;
   top: 50%;
   left: 50%;
 
@@ -309,12 +308,12 @@ h3 {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-}
+} */
 
 /* Кнопка закрытия модалки */
-.modal .closed-btn {
-  /* Position относительно .modal */
-  position: absolute;
+/* .modal .closed-btn { */
+/* Position относительно .modal */
+/* position: absolute;
   top: 8px;
   right: 8px;
 
@@ -324,26 +323,26 @@ h3 {
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   background: var(--bg-card-color);
-}
+} */
 
-.modal .closed-svg {
-  /* Position Позиционируем по центру относительно круга (.closed-btn)*/
-  position: absolute;
+/* .modal .closed-svg { */
+/* Position Позиционируем по центру относительно круга (.closed-btn)*/
+/* position: absolute;
   top: 50%;
   left: 50%;
 
   transform: translate(-50%, -50%);
 
   transition: fill var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
-.modal .closed-btn:hover .closed-svg,
+/* .modal .closed-btn:hover .closed-svg,
 .modal .closed-btn:focus .closed-svg {
   fill: var(--main-blue-color);
-}
+} */
 
 /* Form для модального окна */
-.backdrop .modal-title {
+/* .backdrop .modal-title {
   display: block;
   margin-bottom: 12px;
 
@@ -352,27 +351,27 @@ h3 {
   line-height: 1.15;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
-}
+} */
 
 /* для первых трех input  */
-.form-block {
+/* .form-block {
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: 10px;
-}
+} */
 
 /* для блока textarea */
-.form-textarea {
+/* .form-textarea {
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin-bottom: 20px;
-}
+} */
 
-.form-label,
+/* .form-label,
 .label-comment {
   margin-top: 0;
   margin-bottom: 4px;
@@ -382,9 +381,9 @@ h3 {
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--secondary-text-color);
-}
+} */
 
-.form-input {
+/* .form-input {
   width: 100%;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -394,31 +393,31 @@ h3 {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-}
+} */
 
-.form-svg {
+/* .form-svg {
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 12px; */
 
-  /* Чтобы можно было нажать поверх svg icon */
-  pointer-events: none;
-}
+/* Чтобы можно было нажать поверх svg icon */
+/* pointer-events: none;
+} */
 
 /* при фокусе на input (и при набраном тексте) происходит смена цвета svg */
-.form-input:focus + .form-svg,
+/* .form-input:focus + .form-svg,
 .form-input:not(:placeholder-shown) + .form-svg {
   fill: var(--main-blue-color);
-}
+} */
 
 /* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
-.form-input:focus,
+/* .form-input:focus,
 .form-input:not(:placeholder-shown) {
   outline: none;
   border-color: var(--main-blue-color);
-}
+} */
 
-.form-textarea textarea {
+/* .form-textarea textarea {
   resize: none;
   width: 100%;
   height: 120px;
@@ -431,9 +430,9 @@ h3 {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-}
+} */
 
-.form-textarea .label-placeholder {
+/* .form-textarea .label-placeholder {
   position: absolute;
   top: 32px;
   left: 17px;
@@ -443,17 +442,17 @@ h3 {
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
-}
+} */
 
 /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
-.form-textarea textarea:focus,
+/* .form-textarea textarea:focus,
 .form-textarea textarea:not(:placeholder-shown) {
   outline: none;
   border-color: var(--main-blue-color);
-}
+} */
 
 /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
-.form-textarea textarea:focus + .label-placeholder,
+/* .form-textarea textarea:focus + .label-placeholder,
 .form-textarea textarea:not(:placeholder-shown) + .label-placeholder {
   position: absolute;
   width: 1px;
@@ -463,24 +462,24 @@ h3 {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
 /* Кастомный чекбокс */
-.form-field .form-policy {
+/* .form-field .form-policy {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-}
+} */
 
-.form-policy .policy-label {
+/* .form-policy .policy-label {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* Скрываем станартный чекбокс */
-.form-policy .policy-checkbox {
+/* .form-policy .policy-checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -489,9 +488,9 @@ h3 {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
-.icon-check {
+/* .icon-check {
   display: flex;
   align-items: center;
 
@@ -500,10 +499,10 @@ h3 {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
-}
+} */
 
 /* Оформляем кастомный чекбокс */
-.form-policy .icon-check::before {
+/* .form-policy .icon-check::before {
   display: inline-block;
   content: '';
   width: 16px;
@@ -514,29 +513,29 @@ h3 {
   border-radius: 2px;
 
   transition: all var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
 /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
-.form-policy .policy-checkbox:focus + .icon-check::before,
+/* .form-policy .policy-checkbox:focus + .icon-check::before,
 .form-policy .policy-checkbox:hover + .icon-check::before {
   border-color: var(--main-blue-color);
-}
+} */
 
 /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
-.form-policy .policy-checkbox:checked + .icon-check::before {
+/* .form-policy .policy-checkbox:checked + .icon-check::before {
   background-color: var(--main-blue-color);
   background-image: url('../images/icon-check.svg');
   background-size: contain;
   border-color: transparent;
   background-origin: border-box;
-}
+} */
 
-.policy-label a {
+/* .policy-label a {
   color: var(--main-blue-color);
-}
+} */
 
 /* Кнопка закрытия модального окна */
-.form-field .btn-send {
+/* .form-field .btn-send {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 56px;
@@ -551,26 +550,26 @@ h3 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: var(--third-text-color);
-}
+} */
 /* !CLOSED hero */
 
 /* !advantages list */
-.adv {
+/* .adv {
   padding-top: 94px;
   padding-bottom: 94px;
-}
+} */
 
-.advantages {
+/* .advantages {
   display: flex;
-  flex-wrap: wrap; /*вдруг добавят еще разделов*/
+  flex-wrap: wrap; вдруг добавят еще разделов */
 
-  margin: 0;
+/* margin: 0;
   padding: 0;
 
   list-style: none;
-}
+} */
 
-.advantages-box {
+/* .advantages-box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -580,17 +579,17 @@ h3 {
   border-radius: 4px;
 
   background: var(--bg-secondary-color);
-}
-
+} */
+/* 
 .advantages .advantages-list {
   width: calc((100% - 90px) / 4);
-}
+} */
 
-.advantages .advantages-list:not(:nth-child(4n)) {
+/* .advantages .advantages-list:not(:nth-child(4n)) {
   margin-right: 30px;
-}
+} */
 
-.advantages .advantages-title {
+/* .advantages .advantages-title {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -599,8 +598,9 @@ h3 {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-}
-.advantages .advantages-text {
+} */
+
+/* .advantages .advantages-text {
   margin: 0;
 
   color: var(--secondary-text-color);
@@ -608,15 +608,15 @@ h3 {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-}
+} */
 /* !CLOSED advantages list */
 
 /* !Чем мы занимаемся */
-.work {
+/* .work {
   padding-bottom: 94px;
-}
+} */
 
-.work .title {
+/* .work .title {
   margin-top: 0;
   margin-bottom: 50px;
   text-align: center;
@@ -625,37 +625,37 @@ h3 {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
-}
+} */
 
-.work .work-list {
-  display: flex;
-  flex-wrap: wrap; /* если теоретически добавят еще картинок */
+/* .work .work-list {
+  display: flex; */
+
+/* если теоретически добавят еще картинок */
+/* flex-wrap: wrap; 
 
   margin: 0;
   padding: 0;
 
   list-style: none;
-}
+} */
 
-.work-list .list-item {
-  /* Position */
-  position: relative; /* *Position */
+/* .work-list .list-item {
+  position: relative; 
 
   width: calc((100% - 60px) / 3);
-}
+} */
 
 /* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
-.work-list .list-item:not(:nth-child(3n)) {
+/* .work-list .list-item:not(:nth-child(3n)) {
   margin-right: 30px;
-}
+} */
 
-.work-list img {
+/* .work-list img {
   display: block;
-}
+} */
 
 /* *for position-block */
-.work-list .position-block {
-  /* Position */
+/* .work-list .position-block {
   position: absolute;
   bottom: 0;
 
@@ -667,10 +667,10 @@ h3 {
   align-items: center;
 
   background: rgba(47, 48, 58, 0.8);
-}
+} */
 
 /* *for position-text */
-.work-list .position-text {
+/* .work-list .position-text {
   margin: 0;
 
   font-family: var(--main-font-family);
@@ -680,19 +680,19 @@ h3 {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bg-third-color);
-}
+} */
 
 /* !CLOSED Чем мы занимаемся */
 
 /* !Наша команда */
-.team {
+/* .team {
   padding-top: 94px;
   padding-bottom: 94px;
 
   background: var(--bg-secondary-color);
-}
+} */
 
-.team .title {
+/* .team .title {
   margin-top: 0;
   margin-bottom: 50px;
   text-align: center;
@@ -701,18 +701,18 @@ h3 {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
-}
+} */
 
-.team .team-list {
+/* .team .team-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
   list-style: none;
-}
+} */
 
-.team-list .list-item {
+/* .team-list .list-item {
   width: calc((100% - 90px) / 4);
   padding-bottom: 30px;
 
@@ -720,18 +720,18 @@ h3 {
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.team-list .list-item:not(:nth-child(4n)) {
+/* .team-list .list-item:not(:nth-child(4n)) {
   margin-right: 30px;
-}
+} */
 
-.team-list .list-img {
+/* .team-list .list-img {
   display: block;
   margin-bottom: 30px;
-}
+} */
 
-.team-list .list-title {
+/* .team-list .list-title {
   margin-top: 0;
   margin-bottom: 10px;
   margin-left: 0;
@@ -742,10 +742,10 @@ h3 {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-}
+} */
 
 /* *position */
-.team-list .list-text {
+/* .team-list .list-text {
   margin-top: 0;
   margin-bottom: 16px;
   margin-left: 0;
@@ -757,50 +757,50 @@ h3 {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-}
+} */
 
-.team .social-block {
+/* .team .social-block {
   display: flex;
   justify-content: center;
   align-items: center;
 
   list-style: none;
-}
+} */
 
-.team .social-link {
+/* .team .social-link {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
 
-  fill: var(--icon-main-color);
+  fill: var(--icon-main-color); */
 
-  /* Переходы CSS  */
-  transition: fill var(--transition-duration) var(--transition-timing-formula),
+/* Переходы CSS  */
+/* transition: fill var(--transition-duration) var(--transition-timing-formula),
     background-color var(--transition-duration) var(--transition-timing-formula),
     border-radius var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
-.team .social-link:hover,
+/* .team .social-link:hover,
 .team .social-link:focus {
   fill: var(--third-text-color);
   background-color: var(--main-blue-color);
   border-radius: 50%;
-}
+} */
 
-.team .social-link:not(:last-child) {
+/* .team .social-link:not(:last-child) {
   margin-right: 10px;
-}
+} */
 /* !CLOSED Наша команда */
 
 /* !Постоянные клиенты */
-.clients {
+/* .clients {
   padding-top: 94px;
   padding-bottom: 94px;
-}
+} */
 
-.clients .title {
+/* .clients .title {
   margin-top: 0;
   margin-bottom: 50px;
   text-align: center;
@@ -811,13 +811,13 @@ h3 {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
-}
+} */
 
-.clients .clients-block {
+/* .clients .clients-block {
   display: flex;
-}
+} */
 
-.clients-block .clients-link {
+/* .clients-block .clients-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -828,37 +828,37 @@ h3 {
   text-decoration: none;
   border: 1px solid var(--icon-main-color);
   border-radius: 4px;
-  fill: var(--icon-main-color);
+  fill: var(--icon-main-color); */
 
-  /* Переходы CSS  */
-  transition: border-color var(--transition-duration) var(--transition-timing-formula),
+/* Переходы CSS  */
+/* transition: border-color var(--transition-duration) var(--transition-timing-formula),
     fill var(--transition-duration) var(--transition-timing-formula);
-}
+} */
 
-.clients-block .clients-link:hover,
+/* .clients-block .clients-link:hover,
 .clients-block .clients-link:focus {
   border-color: var(--main-blue-color);
   fill: var(--main-blue-color);
-}
+} */
 
-.clients-block .clients-link:not(:last-child) {
+/* .clients-block .clients-link:not(:last-child) {
   margin-right: 30px;
-}
+} */
 /* !CLOSED Постоянные клиенты */
 
 /* !Футер */
-.footer {
+/* .footer {
   padding-top: 60px;
   padding-bottom: 60px;
 
   background: var(--bg-main-color);
-}
+} */
 
-.logo .studio-white {
+/* .logo .studio-white {
   color: var(--third-text-color);
-}
+} */
 
-.company-address {
+/* .company-address {
   margin-top: 20px;
 
   font-style: normal;
@@ -866,39 +866,39 @@ h3 {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-}
+} */
 
-.company-address .map {
+/* .company-address .map {
   color: var(--third-text-color);
-}
+} */
 
-.company-address .link {
+/* .company-address .link {
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-}
+} */
 
-.company-address .link {
+/* .company-address .link {
   margin-top: 9px;
-}
+} */
 
 /* *Делаем SVG для блока футера */
-.footer-flex {
+/* .footer-flex {
   display: flex;
   align-items: baseline;
-}
+} */
 
-.footer-address-block {
+/* .footer-address-block {
   margin-right: 70px;
-}
+} */
 
-.footer-social {
+/* .footer-social {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
-.footer-social .title {
+/* .footer-social .title {
   margin-bottom: 20px;
 
   font-family: var(--main-font-family);
@@ -908,47 +908,32 @@ h3 {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--third-text-color);
-}
+} */
 
-.footer-social .social-block {
+/* .footer-social .social-block {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-}
+} */
 
-.footer-social .social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  fill: var(--bg-card-color);
-
-  /* Переходы CSS  */
-  transition: background var(--transition-duration) var(--transition-timing-formula);
-}
-
-.footer-social .social-link:hover,
+/* .footer-social .social-link:hover,
 .footer-social .social-link:focus {
   background: var(--main-blue-color);
-}
+} */
 
-.footer-social .social-link:not(:last-child) {
+/* .footer-social .social-link:not(:last-child) {
   margin-right: 10px;
-}
+} */
 
 /* *Делаем форму для футера */
-.subscribe {
+/* .subscribe {
   display: flex;
   flex-direction: column;
   margin-left: auto;
-}
+} */
 
-.subscribe-title {
+/* .subscribe-title {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -957,18 +942,18 @@ h3 {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--bg-third-color);
-}
+} */
 
-.subscribe .subscribe-form {
+/* .subscribe .subscribe-form {
   position: relative;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-}
+} */
 
-.subscribe .form-input {
-  display: flex;
+/* .subscribe .form-input { */
+/* display: flex;
   align-items: center;
 
   margin-right: 12px;
@@ -980,34 +965,34 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background: var(--bg-main-color);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
 
-  /* Стили для активной фазы input */
-  font-weight: 400;
+/* Стили для активной фазы input */
+/* font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-}
+  color: rgba(255, 255, 255, 0.6); */
+/* } */
 
-.subscribe .form-label {
+/* .subscribe .form-label {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
 
   /* Стили для надписи E-mail */
-  font-weight: 400;
+/* font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-  /* Чтобы можно было нажать поверх form-label текста */
-  pointer-events: none;
-}
+  color: rgba(255, 255, 255, 0.6); */
+/* Чтобы можно было нажать поверх form-label текста */
+/* pointer-events: none; */
+/* }  */
 
 /* Когда input активен или исчез плейсхолдер - надпись E-mail скрывается  */
-.form-input:focus + .form-label,
+/* .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
   position: absolute;
   width: 1px;
@@ -1017,10 +1002,10 @@ h3 {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
+} */
 
 /* Кнопка отправки  */
-.subscribe .form-btn {
+/* .subscribe .form-btn {
   display: flex;
   align-items: center;
 
@@ -1038,11 +1023,11 @@ h3 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-}
+} */
 
-.form-btn svg {
+/* .form-btn svg {
   margin-left: 10px;
-}
+} */
 
 /* !CLOSED Футер */
 

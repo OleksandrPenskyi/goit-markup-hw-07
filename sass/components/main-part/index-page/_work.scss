@@ -1,0 +1,65 @@
+.work {
+  padding-bottom: 94px;
+}
+
+.work .title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+}
+
+.work .work-list {
+  display: flex;
+  flex-wrap: wrap; /* если теоретически добавят еще картинок */
+
+  @extend %list-reset;
+}
+
+.work-list .list-item {
+  /* Position */
+  position: relative;
+
+  width: calc((100% - 60px) / 3);
+}
+
+/* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
+.work-list .list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.work-list img {
+  display: block;
+}
+
+/* *for position-block */
+.work-list .position-block {
+  /* Position */
+  position: absolute;
+  bottom: 0;
+
+  @extend %flex-center;
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
+/* *for position-text */
+.work-list .position-text {
+  margin: 0;
+
+  font-family: $main-font-family;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $bg-third-color;
+}

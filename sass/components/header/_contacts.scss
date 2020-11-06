@@ -1,22 +1,21 @@
 .contacts {
-  // todo mixin
   margin-left: auto;
   display: flex;
   align-items: center;
 }
 
-.contacts__link {
+.contacts .link {
   display: inline-flex;
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
   color: $secondary-text-color;
-  text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  text-decoration: none;
 
   /* для заполнeния svg */
   fill: $secondary-text-color;
@@ -37,6 +36,6 @@
 }
 
 /* Оформляем svg */
-.contacts__icon {
+.contacts .icon {
   margin-right: 10px;
 }

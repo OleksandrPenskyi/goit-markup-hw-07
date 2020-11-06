@@ -6,8 +6,8 @@
 .nav-list {
   display: flex;
   margin-top: 0;
-  margin-left: 93px;
   margin-bottom: 0;
+  margin-left: 93px;
   margin-right: 0;
   padding: 0;
 
@@ -18,11 +18,11 @@
   list-style: none;
 }
 
-.nav-list__item:not(:last-child) {
+.nav-list .item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-list__link {
+.nav-list .link {
   /* position */
   position: relative;
 
@@ -43,12 +43,11 @@
 }
 
 /* active page */
-.nav-list__link--active {
+.nav-list .link.active {
   color: $main-blue-color;
 
   /* *position (after) for active link*/
   &:after {
-    /* position */
     position: absolute;
     bottom: -1px;
     left: 0;

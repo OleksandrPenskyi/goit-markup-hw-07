@@ -1,0 +1,113 @@
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+
+  @extend %list-reset;
+}
+
+.examples .examples-list {
+  /* Ширина элемента списка в % */
+  width: calc((100% - 60px) / 3);
+
+  background: $bg-card-color;
+
+  /* Переходы CSS */
+  transition: box-shadow $transition-duration $transition-timing-formula;
+}
+
+.examples .examples-list:hover,
+.examples .examples-list:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
+.examples .examples-list:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+/* маржин ботом для всех элементов списка, кроме 3-х последних элементов списка*/
+.examples .examples-list:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+/* *position-block */
+.examples .position-box {
+  /* Position */
+  position: relative;
+  overflow: hidden;
+}
+
+.examples-link .transormation-box {
+  /* Position */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(+100%);
+
+  padding-top: 63px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 294px;
+  width: 100%;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  /* Переходы CSS  */
+  transition: transform $transition-duration $transition-timing-formula;
+}
+
+/* *Трансформация блока при наведении на li */
+.examples .examples-link:hover .transormation-box,
+.examples .examples-link:focus .transormation-box {
+  transform: translateY(0);
+}
+
+.examples-list .position-text {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: $third-text-color;
+}
+/* *CLOSED position-block */
+
+.examples-link {
+  display: block;
+
+  text-decoration: none;
+}
+
+.examples .text-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  border-left: 1px solid $border-main-color;
+  border-bottom: 1px solid $border-main-color;
+  border-right: 1px solid $border-main-color;
+}
+
+.examples-title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.examples-text {
+  margin: 0;
+
+  color: $secondary-text-color;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+}
