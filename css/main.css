@@ -586,25 +586,20 @@ img {
 }
 
 .work-list .list-item {
-  /* Position */
   position: relative;
   width: calc((100% - 60px) / 3);
+  /* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
 }
 
-/* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
 .work-list .list-item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
 
-.work-list img {
-  display: block;
-}
-
 /* *for position-block */
 .work-list .position-block {
-  /* Position */
   position: absolute;
   bottom: 0;
+  left: 0;
   padding-top: 27px;
   padding-bottom: 27px;
   width: 100%;
