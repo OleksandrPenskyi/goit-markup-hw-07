@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* *Спрятать текст h2/h1 (не работает в геометрии), но оставить его для читалок */
 .form-textarea textarea:focus + .label-placeholder,
-.form-textarea textarea:not(:placeholder-shown) + .label-placeholder, .form-policy .policy-checkbox, .visually-hidden, .subscribe .form-input:focus + .form-label,
+.form-textarea textarea:not(:placeholder-shown) + .label-placeholder, .form-policy .policy-checkbox, .title-hidden, .visually-hidden, .subscribe .form-input:focus + .form-label,
 .subscribe .form-input:not(:placeholder-shown) + .form-label {
   position: absolute;
   width: 1px;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-.work .work-list, .team .team-list, .examples {
+.advantages, .work .work-list, .team .team-list, .examples {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -525,17 +525,6 @@ img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   /*вдруг добавят еще разделов*/
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.advantages-box {
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
-  border-radius: 4px;
-  background: #f5f4fa;
 }
 
 .advantages .advantages-list {
@@ -544,6 +533,14 @@ img {
 
 .advantages .advantages-list:not(:nth-child(4n)) {
   margin-right: 30px;
+}
+
+.advantages-box {
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background: #f5f4fa;
 }
 
 .advantages .advantages-title {
@@ -558,11 +555,11 @@ img {
 
 .advantages .advantages-text {
   margin: 0;
-  color: #757575;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  color: #757575;
 }
 
 .work {

@@ -3,7 +3,7 @@
   padding-bottom: 94px;
 }
 
-.visually-hidden {
+.title-hidden {
   @extend %visually-hidden;
 }
 
@@ -11,12 +11,18 @@
   display: flex;
   flex-wrap: wrap; /*вдруг добавят еще разделов*/
 
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
+  @extend %list-reset;
 }
 
+.advantages .advantages-list {
+  width: calc((100% - 90px) / 4);
+
+  &:not(:nth-child(4n)) {
+    margin-right: 30px;
+  }
+}
+
+//  Блок с SVG
 .advantages-box {
   @extend %flex-center;
   width: 270px;
@@ -25,14 +31,6 @@
   border-radius: 4px;
 
   background: $bg-secondary-color;
-}
-
-.advantages .advantages-list {
-  width: calc((100% - 90px) / 4);
-}
-
-.advantages .advantages-list:not(:nth-child(4n)) {
-  margin-right: 30px;
 }
 
 .advantages .advantages-title {
@@ -45,12 +43,13 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+
 .advantages .advantages-text {
   margin: 0;
 
-  color: $secondary-text-color;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  color: $secondary-text-color;
 }
