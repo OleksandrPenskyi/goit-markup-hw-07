@@ -214,15 +214,12 @@ img {
 .hero .title {
   margin-top: 0;
   margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.hero .title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 .hero .open-btn {
@@ -244,7 +241,6 @@ img {
 
 /* *modal window */
 .backdrop {
-  /* Position */
   position: fixed;
   top: 0;
   left: 0;
@@ -253,15 +249,15 @@ img {
   /* Чтобы модальное окно было выше других эллементов страницы */
   z-index: 100;
   background: rgba(0, 0, 0, 0.2);
-  /* При появлении backdrop, фон появляется плавно */
   opacity: 1;
+  /* При появлении backdrop, фон появляется плавно */
   -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-  /* чтобы пропадала подложка backdrop*/
+  /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
   pointer-events: none;
 }
 
@@ -273,26 +269,24 @@ img {
 
 /* *Modal активное */
 .modal {
-  /* Position */
-  /* Центрируем */
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  height: 581px;
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 528px;
-  height: 581px;
   background: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal .closed-btn {
@@ -307,6 +301,11 @@ img {
   background: #ffffff;
 }
 
+.modal .closed-btn:hover .closed-svg,
+.modal .closed-btn:focus .closed-svg {
+  fill: #2196f3;
+}
+
 .modal .closed-svg {
   /* Position Позиционируем по центру относительно круга (.closed-btn)*/
   position: absolute;
@@ -316,11 +315,6 @@ img {
           transform: translate(-50%, -50%);
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal .closed-btn:hover .closed-svg,
-.modal .closed-btn:focus .closed-svg {
-  fill: #2196f3;
 }
 
 /* Form для модального окна */
@@ -340,13 +334,13 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-bottom: 10px;
 }
 
@@ -356,13 +350,13 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-bottom: 20px;
 }
 
@@ -387,6 +381,18 @@ img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета icon svg */
+}
+
+.form-input:focus, .form-input:not(:placeholder-shown) {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.form-input:focus + .form-svg,
+.form-input:not(:placeholder-shown) + .form-svg {
+  fill: #2196f3;
 }
 
 .form-svg {
@@ -395,19 +401,6 @@ img {
   left: 12px;
   /* Чтобы можно было нажать поверх svg icon */
   pointer-events: none;
-}
-
-/* при фокусе на input (и при набраном тексте) происходит смена цвета svg */
-.form-input:focus + .form-svg,
-.form-input:not(:placeholder-shown) + .form-svg {
-  fill: #2196f3;
-}
-
-/* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
-.form-input:focus,
-.form-input:not(:placeholder-shown) {
-  outline: none;
-  border-color: #2196f3;
 }
 
 .form-textarea textarea {
@@ -422,6 +415,13 @@ img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
+}
+
+.form-textarea textarea:focus, .form-textarea textarea:not(:placeholder-shown) {
+  outline: none;
+  border-color: #2196f3;
 }
 
 .form-textarea .label-placeholder {
@@ -435,20 +435,30 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-/* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
-.form-textarea textarea:focus,
-.form-textarea textarea:not(:placeholder-shown) {
-  outline: none;
-  border-color: #2196f3;
-}
-
-/* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
 /* Кастомный чекбокс */
 .form-field .form-policy {
   margin-bottom: 30px;
 }
 
 /* Скрываем стандартный чекбокс */
+.form-policy .policy-checkbox {
+  /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
+  /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
+}
+
+.form-policy .policy-checkbox:focus + .icon-check::before,
+.form-policy .policy-checkbox:hover + .icon-check::before {
+  border-color: #2196f3;
+}
+
+.form-policy .policy-checkbox:checked + .icon-check::before {
+  background-color: #2196f3;
+  background-image: url("../images/icon-check.svg");
+  background-size: contain;
+  border-color: transparent;
+  background-origin: border-box;
+}
+
 .icon-check {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,10 +471,10 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #757575;
+  /* Оформляем кастомный чекбокс */
 }
 
-/* Оформляем кастомный чекбокс */
-.form-policy .icon-check::before {
+.icon-check::before {
   display: inline-block;
   content: '';
   width: 16px;
@@ -476,26 +486,11 @@ img {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
-.form-policy .policy-checkbox:focus + .icon-check::before,
-.form-policy .policy-checkbox:hover + .icon-check::before {
-  border-color: #2196f3;
-}
-
-/* Когда кастомный чекбокс зачекан, то он с синей птичкой */
-.form-policy .policy-checkbox:checked + .icon-check::before {
-  background-color: #2196f3;
-  background-image: url("../images/icon-check.svg");
-  background-size: contain;
-  border-color: transparent;
-  background-origin: border-box;
-}
-
 .policy-label a {
   color: #2196f3;
 }
 
-/* Кнопка закрытия модального окна */
+/* Кнопка отправки формы */
 .form-field .btn-send {
   padding-top: 10px;
   padding-bottom: 10px;

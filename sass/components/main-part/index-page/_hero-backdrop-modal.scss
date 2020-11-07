@@ -1,6 +1,5 @@
 /* *modal window */
 .backdrop {
-  /* Position */
   position: fixed;
   top: 0;
   left: 0;
@@ -11,16 +10,16 @@
   /* Чтобы модальное окно было выше других эллементов страницы */
   z-index: 100;
   background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
 
   /* При появлении backdrop, фон появляется плавно */
-  opacity: 1;
   transition: opacity $transition-duration $transition-timing-formula;
 }
 
 .backdrop.is-hidden {
   opacity: 0;
 
-  /* чтобы пропадала подложка backdrop*/
+  /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
   pointer-events: none;
 }
 
@@ -31,26 +30,23 @@
 
 /* *Modal активное */
 .modal {
-  /* Position */
-  /* Центрируем */
   position: absolute;
   top: 50%;
   left: 50%;
-
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-
   transform: translate(-50%, -50%) scale(1);
-  transition: transform $transition-duration $transition-timing-formula;
 
   width: 528px;
   height: 581px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 
   background: $bg-card-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transition: transform $transition-duration $transition-timing-formula;
 }
 
 .modal .closed-btn {
@@ -62,9 +58,14 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background: $bg-card-color;
+
+  &:hover .closed-svg,
+  &:focus .closed-svg {
+    fill: $main-blue-color;
+  }
 }
 
 .modal .closed-svg {
@@ -72,15 +73,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 
   transition: fill $transition-duration $transition-timing-formula;
-}
-
-.modal .closed-btn:hover .closed-svg,
-.modal .closed-btn:focus .closed-svg {
-  fill: $main-blue-color;
 }
 
 /* Form для модального окна */
@@ -98,9 +93,11 @@
 /* для первых трех input  */
 .form-block {
   position: relative;
+
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+  align-items: flex-start;
+
   margin-bottom: 10px;
 }
 
@@ -109,8 +106,9 @@
   position: relative;
 
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
+  align-items: flex-start;
+
   margin-bottom: 20px;
 }
 
@@ -136,6 +134,19 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+    border-color: $main-blue-color;
+  }
+
+  /* при фокусе на input (и при набраном тексте) происходит смена цвета icon svg */
+  &:focus + .form-svg,
+  &:not(:placeholder-shown) + .form-svg {
+    fill: $main-blue-color;
+  }
 }
 
 .form-svg {
@@ -145,19 +156,6 @@
 
   /* Чтобы можно было нажать поверх svg icon */
   pointer-events: none;
-}
-
-/* при фокусе на input (и при набраном тексте) происходит смена цвета svg */
-.form-input:focus + .form-svg,
-.form-input:not(:placeholder-shown) + .form-svg {
-  fill: $main-blue-color;
-}
-
-/* при фокусе на input (и при набраном тексте) происходит смена цвета рамки */
-.form-input:focus,
-.form-input:not(:placeholder-shown) {
-  outline: none;
-  border-color: $main-blue-color;
 }
 
 .form-textarea textarea {
@@ -173,8 +171,22 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+    border-color: $main-blue-color;
+  }
+
+  /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
+  &:focus + .label-placeholder,
+  &:not(:placeholder-shown) + .label-placeholder {
+    @extend %visually-hidden;
+  }
 }
 
+// пункт 'Введите текст'
 .form-textarea .label-placeholder {
   position: absolute;
   top: 32px;
@@ -185,19 +197,6 @@
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
-}
-
-/* Когда textarea в фокусе и набран текст (т.е. нет placeholder), то рамка становится синей  */
-.form-textarea textarea:focus,
-.form-textarea textarea:not(:placeholder-shown) {
-  outline: none;
-  border-color: $main-blue-color;
-}
-
-/* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
-.form-textarea textarea:focus + .label-placeholder,
-.form-textarea textarea:not(:placeholder-shown) + .label-placeholder {
-  @extend %visually-hidden;
 }
 
 /* Кастомный чекбокс */
@@ -213,6 +212,21 @@
 /* Скрываем стандартный чекбокс */
 .form-policy .policy-checkbox {
   @extend %visually-hidden;
+
+  /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
+  &:focus + .icon-check::before,
+  &:hover + .icon-check::before {
+    border-color: $main-blue-color;
+  }
+
+  /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
+  &:checked + .icon-check::before {
+    background-color: $main-blue-color;
+    background-image: url('../images/icon-check.svg');
+    background-size: contain;
+    border-color: transparent;
+    background-origin: border-box;
+  }
 }
 
 .icon-check {
@@ -224,42 +238,27 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: $secondary-text-color;
-}
 
-/* Оформляем кастомный чекбокс */
-.form-policy .icon-check::before {
-  display: inline-block;
-  content: '';
-  width: 16px;
-  height: 15px;
-  margin-right: 8px;
+  /* Оформляем кастомный чекбокс */
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 15px;
+    margin-right: 8px;
 
-  border: 2px solid $primary-text-color;
-  border-radius: 2px;
+    border: 2px solid $primary-text-color;
+    border-radius: 2px;
 
-  transition: all $transition-duration $transition-timing-formula;
-}
-
-/* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
-.form-policy .policy-checkbox:focus + .icon-check::before,
-.form-policy .policy-checkbox:hover + .icon-check::before {
-  border-color: $main-blue-color;
-}
-
-/* Когда кастомный чекбокс зачекан, то он с синей птичкой */
-.form-policy .policy-checkbox:checked + .icon-check::before {
-  background-color: $main-blue-color;
-  background-image: url('../images/icon-check.svg');
-  background-size: contain;
-  border-color: transparent;
-  background-origin: border-box;
+    transition: all $transition-duration $transition-timing-formula;
+  }
 }
 
 .policy-label a {
   color: $main-blue-color;
 }
 
-/* Кнопка закрытия модального окна */
+/* Кнопка отправки формы */
 .form-field .btn-send {
   padding-top: 10px;
   padding-bottom: 10px;
