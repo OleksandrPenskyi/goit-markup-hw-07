@@ -43,7 +43,13 @@
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
+  color: $subscribe-form-color;
+
+  /* Когда input активен или исчез плейсхолдер - (label) надпись E-mail скрывается  */
+  &:focus + .form-label,
+  &:not(:placeholder-shown) + .form-label {
+    @extend %visually-hidden;
+  }
 }
 
 .subscribe .form-label {
@@ -57,15 +63,10 @@
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
+  color: $subscribe-form-color;
+
   /* Чтобы можно было нажать поверх form-label текста */
   pointer-events: none;
-}
-
-/* Когда input активен или исчез плейсхолдер - надпись E-mail скрывается  */
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  @extend %visually-hidden;
 }
 
 /* Кнопка отправки  */

@@ -17,16 +17,13 @@
 }
 
 .footer-social .social-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
+
   list-style: none;
 }
 
 .footer-social .social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
   width: 44px;
   height: 44px;
 
@@ -36,13 +33,13 @@
 
   /* Переходы CSS  */
   transition: background $transition-duration $transition-timing-formula;
-}
 
-.footer-social .social-link:hover,
-.footer-social .social-link:focus {
-  background: $main-blue-color;
-}
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 
-.footer-social .social-link:not(:last-child) {
-  margin-right: 10px;
+  &:hover,
+  &:focus {
+    background: $main-blue-color;
+  }
 }
