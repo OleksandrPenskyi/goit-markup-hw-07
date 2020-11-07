@@ -10,36 +10,34 @@
   width: calc((100% - 60px) / 3);
 
   background: $bg-card-color;
-
-  /* Переходы CSS */
   transition: box-shadow $transition-duration $transition-timing-formula;
+
+  /* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
+  &:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+
+  /* нижний маржин для всех элементов списка, кроме 3-х последних элементов списка*/
+  &:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 }
 
-.examples .examples-list:hover,
-.examples .examples-list:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-/* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
-.examples .examples-list:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-
-/* маржин ботом для всех элементов списка, кроме 3-х последних элементов списка*/
-.examples .examples-list:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
-
-/* *position-block */
+/* Прятающийся блок */
+/* Относительно этого блока поиционируем .transormation-box */
 .examples .position-box {
-  /* Position */
   position: relative;
   overflow: hidden;
 }
 
-.examples-link .transormation-box {
-  /* Position */
+// Блок спрятан
+.examples .transormation-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -54,17 +52,23 @@
 
   background: rgba(33, 150, 243, 0.9);
 
-  /* Переходы CSS  */
   transition: transform $transition-duration $transition-timing-formula;
 }
 
-/* *Трансформация блока при наведении на li */
-.examples .examples-link:hover .transormation-box,
-.examples .examples-link:focus .transormation-box {
-  transform: translateY(0);
+// Блок появляется
+.examples .examples-link {
+  display: block;
+
+  text-decoration: none;
+
+  /* .transormation-box вылазит снизу при наведении на li */
+  &:hover .transormation-box,
+  &:focus .transormation-box {
+    transform: translateY(0);
+  }
 }
 
-.examples-list .position-text {
+.transormation-box .position-text {
   margin: 0;
 
   font-weight: 400;
@@ -73,13 +77,7 @@
   letter-spacing: 0.03em;
   color: $third-text-color;
 }
-/* *CLOSED position-block */
-
-.examples-link {
-  display: block;
-
-  text-decoration: none;
-}
+/* *CLOSED прятающийся блок */
 
 .examples .text-block {
   padding-top: 20px;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
-/* *Спрятать текст h2/h1 (не работает в геометрии), но оставить его для читалок */
+/* Спрятать (не учавствует в геометрии), но все еще виден для читалок */
 .form-textarea textarea:focus + .label-placeholder,
-.form-textarea textarea:not(:placeholder-shown) + .label-placeholder, .form-policy .policy-checkbox, .title-hidden, .visually-hidden, .subscribe .form-input:focus + .form-label,
+.form-textarea textarea:not(:placeholder-shown) + .label-placeholder, .form-policy .policy-checkbox, .title-hidden, .subscribe .form-input:focus + .form-label,
 .subscribe .form-input:not(:placeholder-shown) + .form-label {
   position: absolute;
   width: 1px;
@@ -651,7 +651,6 @@ img {
 }
 
 .team-list .list-img {
-  display: block;
   margin-bottom: 30px;
 }
 
@@ -667,7 +666,6 @@ img {
   letter-spacing: 0.03em;
 }
 
-/* *position */
 .team-list .list-text {
   margin-top: 0;
   margin-bottom: 16px;
@@ -694,15 +692,14 @@ img {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team .social-link:hover,
-.team .social-link:focus {
+.team .social-link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.team .social-link:hover, .team .social-link:focus {
   fill: #ffffff;
   background-color: #2196f3;
   border-radius: 50%;
-}
-
-.team .social-link:not(:last-child) {
-  margin-right: 10px;
 }
 
 .clients {
@@ -775,14 +772,14 @@ img {
 .filter-link {
   padding: 6px 22px;
   border-radius: 4px;
-  border-color: transparent;
-  background-color: #f5f4fa;
-  color: #212121;
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  background-color: #f5f4fa;
+  color: #212121;
+  border-color: transparent;
   /* Переходы CSS */
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -790,8 +787,7 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filter-link:hover,
-.filter-link:focus {
+.filter-link:hover, .filter-link:focus {
   background-color: #2196f3;
   color: #ffffff;
   border-color: transparent;
@@ -811,38 +807,35 @@ img {
   /* Ширина элемента списка в % */
   width: calc((100% - 60px) / 3);
   background: #ffffff;
-  /* Переходы CSS */
   -webkit-transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
+  /* нижний маржин для всех элементов списка, кроме 3-х последних элементов списка*/
 }
 
-.examples .examples-list:hover,
-.examples .examples-list:focus {
-  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-/* правый маржин для всех элементов списка, кроме каждого 3-го, 6-го, 9-го и тд */
 .examples .examples-list:not(:nth-child(3n)) {
   margin-right: 30px;
 }
 
-/* маржин ботом для всех элементов списка, кроме 3-х последних элементов списка*/
 .examples .examples-list:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
 
-/* *position-block */
+.examples .examples-list:hover, .examples .examples-list:focus {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* Прятающийся блок */
+/* Относительно этого блока поиционируем .transormation-box */
 .examples .position-box {
-  /* Position */
   position: relative;
   overflow: hidden;
 }
 
-.examples-link .transormation-box {
-  /* Position */
+.examples .transormation-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -855,21 +848,25 @@ img {
   height: 294px;
   width: 100%;
   background: rgba(33, 150, 243, 0.9);
-  /* Переходы CSS  */
   -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* *Трансформация блока при наведении на li */
+.examples .examples-link {
+  display: block;
+  text-decoration: none;
+  /* .transormation-box вылазит снизу при наведении на li */
+}
+
 .examples .examples-link:hover .transormation-box,
 .examples .examples-link:focus .transormation-box {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.examples-list .position-text {
+.transormation-box .position-text {
   margin: 0;
   font-weight: 400;
   font-size: 18px;
@@ -878,12 +875,7 @@ img {
   color: #ffffff;
 }
 
-/* *CLOSED position-block */
-.examples-link {
-  display: block;
-  text-decoration: none;
-}
-
+/* *CLOSED прятающийся блок */
 .examples .text-block {
   padding-top: 20px;
   padding-bottom: 20px;
