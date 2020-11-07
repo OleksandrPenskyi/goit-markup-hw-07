@@ -8,7 +8,6 @@
   margin-bottom: 50px;
   text-align: center;
 
-  font-family: $main-font-family;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -30,18 +29,17 @@
   border: 1px solid $icon-main-color;
   border-radius: 4px;
   fill: $icon-main-color;
-
-  /* Переходы CSS  */
+  /* Переходы для hover / focus  */
   transition: border-color $transition-duration $transition-timing-formula,
     fill $transition-duration $transition-timing-formula;
-}
 
-.clients-block .clients-link:hover,
-.clients-block .clients-link:focus {
-  border-color: $main-blue-color;
-  fill: $main-blue-color;
-}
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 
-.clients-block .clients-link:not(:last-child) {
-  margin-right: 30px;
+  &:hover,
+  &:focus {
+    border-color: $main-blue-color;
+    fill: $main-blue-color;
+  }
 }
