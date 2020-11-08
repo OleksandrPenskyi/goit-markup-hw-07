@@ -63,6 +63,8 @@
 
     <!-- Основной контент сайта -->
     <main>
+      <!-- todoСекция Герой -->
+
       <section class="hero">
         <div class="hero-container">
           <h1 class="title">
@@ -139,7 +141,7 @@
         </div>
       </section>
 
-      <!-- Наши преимущества -->
+      <!-- todoНаши преимущества -->
       <section class="adv">
         <div class="container">
           <!-- Данный Заголовок "h2" тут необязателен, но для семантики будет полезен. Скроем его. -->
@@ -194,10 +196,10 @@
         </div>
       </section>
 
-      <!-- Чем мы занимаемся -->
+      <!-- todoЧем мы занимаемся -->
       <section class="work">
         <div class="container">
-          <h2 class="title">Чем мы занимаемся</h2>
+          <h2 class="section-title section-title--mb">Чем мы занимаемся</h2>
 
           <ul class="work-list">
             <li class="list-item">
@@ -243,137 +245,141 @@
         </div>
       </section>
 
-      <section class="team">
+      <!-- Секция команда -->
+      <section class="team team--ptb">
         <div class="container">
-          <h2 class="title">Наша команда</h2>
+          <h2 class="section-title section-title--mb">Наша команда</h2>
 
           <ul class="team-list">
-            <li class="list-item">
+            <li class="team-list__item">
               <img
-                class="list-img"
+                class="team-list__img"
                 src="./images/photo_1.jpg"
                 alt="Игорь Демьяненко"
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Игорь Демьяненко</h3>
-              <p class="list-text" lang="en">Product Designer</p>
-              <div class="social-block">
-                <a class="social-link" href="https://www.instagram.com">
-                  <svg class="social-svg" width="20" height="20">
+              <h3 class="team-list__title">Игорь Демьяненко</h3>
+              <p class="team-list__text" lang="en">Product Designer</p>
+              <div class="team-list__social-block">
+                <a class="team-list__social-link" href="https://www.instagram.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-instagram"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://twitter.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://twitter.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-twitter"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.facebook.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://www.facebook.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-facebook"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.linkedin.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://www.linkedin.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-linkedin"></use>
                   </svg>
                 </a>
               </div>
             </li>
-            <li class="list-item">
+
+            <li class="team-list__item">
               <img
-                class="list-img"
+                class="team-list__img"
                 src="./images/photo_2.jpg"
                 alt="Ольга Репина"
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Ольга Репина</h3>
-              <p class="list-text" lang="en">Frontend Developer</p>
-              <div class="social-block">
-                <a class="social-link" href="https://www.instagram.com">
-                  <svg class="social-svg" width="20" height="20">
+              <h3 class="team-list__title">Ольга Репина</h3>
+              <p class="team-list__text" lang="en">Frontend Developer</p>
+              <div class="team-list__social-block">
+                <a class="team-list__social-link" href="https://www.instagram.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-instagram"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://twitter.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://twitter.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-twitter"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.facebook.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://www.facebook.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-facebook"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.linkedin.com">
-                  <svg class="social-svg" width="20" height="20">
+                <a class="team-list__social-link" href="https://www.linkedin.com">
+                  <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-linkedin"></use>
                   </svg>
                 </a>
               </div>
             </li>
-            <li class="list-item">
+
+            <li class="team-list__item">
               <img
-                class="list-img"
+                class="team-list__img"
                 src="./images/photo_3.jpg"
                 alt="Николай Тарасов"
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Николай Тарасов</h3>
-              <p class="list-text" lang="en">Marketing</p>
-              <div class="social-block">
-                <a class="social-link" href="https://www.instagram.com">
+              <h3 class="team-list__title">Николай Тарасов</h3>
+              <p class="team-list__text" lang="en">Marketing</p>
+              <div class="team-list__social-block">
+                <a class="team-list__social-link" href="https://www.instagram.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-instagram"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://twitter.com">
+                <a class="team-list__social-link" href="https://twitter.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-twitter"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.facebook.com">
+                <a class="team-list__social-link" href="https://www.facebook.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-facebook"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.linkedin.com">
+                <a class="team-list__social-link" href="https://www.linkedin.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-linkedin"></use>
                   </svg>
                 </a>
               </div>
             </li>
-            <li class="list-item">
+
+            <li class="team-list__item">
               <img
-                class="list-img"
+                class="team-list__img"
                 src="./images/photo_4.jpg"
                 alt="Михаил Ермаков"
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Михаил Ермаков</h3>
-              <p class="list-text" lang="en">UI Designer</p>
-              <div class="social-block">
-                <a class="social-link" href="https://www.instagram.com">
+              <h3 class="team-list__title">Михаил Ермаков</h3>
+              <p class="team-list__text" lang="en">UI Designer</p>
+              <div class="team-list__social-block">
+                <a class="team-list__social-link" href="https://www.instagram.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-instagram"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://twitter.com">
+                <a class="team-list__social-link" href="https://twitter.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-twitter"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.facebook.com">
+                <a class="team-list__social-link" href="https://www.facebook.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-facebook"></use>
                   </svg>
                 </a>
-                <a class="social-link" href="https://www.linkedin.com">
+                <a class="team-list__social-link" href="https://www.linkedin.com">
                   <svg width="20" height="20">
                     <use href="./images/symbols.svg#icon-linkedin"></use>
                   </svg>
@@ -385,38 +391,38 @@
       </section>
 
       <!-- Постоянные клиенты -->
-      <section class="clients">
+      <section class="clients clients--ptb">
         <div class="container">
-          <h2 class="title">Постоянные клиенты</h2>
+          <h2 class="section-title section-title--mb">Постоянные клиенты</h2>
 
           <div class="clients-block">
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="45" height="50">
+            <a class="clients-block__link" href="#">
+              <svg width="45" height="50">
                 <use href="./images/symbols.svg#icon-logo-1"></use>
               </svg>
             </a>
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="40" height="52">
+            <a class="clients-block__link" href="#">
+              <svg width="40" height="52">
                 <use href="./images/symbols.svg#icon-logo-2"></use>
               </svg>
             </a>
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="41" height="43">
+            <a class="clients-block__link" href="#">
+              <svg width="41" height="43">
                 <use href="./images/symbols.svg#icon-logo-3"></use>
               </svg>
             </a>
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="80" height="43">
+            <a class="clients-block__link" href="#">
+              <svg width="80" height="43">
                 <use href="./images/symbols.svg#icon-logo-4"></use>
               </svg>
             </a>
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="59" height="47">
+            <a class="clients-block__link" href="#">
+              <svg width="59" height="47">
                 <use href="./images/symbols.svg#icon-logo-5"></use>
               </svg>
             </a>
-            <a class="clients-link" href="#">
-              <svg class="clients-svg" width="89" height="49">
+            <a class="clients-block__link" href="#">
+              <svg width="89" height="49">
                 <use href="./images/symbols.svg#icon-logo-6"></use>
               </svg>
             </a>

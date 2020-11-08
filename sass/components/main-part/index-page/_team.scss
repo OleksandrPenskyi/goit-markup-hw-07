@@ -1,29 +1,22 @@
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-
   background: $bg-secondary-color;
 }
 
-.team .title {
-  margin-top: 0;
-  margin-bottom: 50px;
-  text-align: center;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
+.team--ptb {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
-.team .team-list {
+// .section-title and .section-title--mb at __work.scss
+
+.team-list {
   display: flex;
   flex-wrap: wrap; // вдруг добавят еще членов команды
 
   @extend %list-reset;
 }
 
-.team-list .list-item {
+.team-list__item {
   width: calc((100% - 90px) / 4);
   padding-bottom: 30px;
 
@@ -37,11 +30,11 @@
   }
 }
 
-.team-list .list-img {
+.team-list__img {
   margin-bottom: 30px;
 }
 
-.team-list .list-title {
+.team-list__title {
   margin-top: 0;
   margin-bottom: 10px;
   margin-left: 0;
@@ -54,7 +47,7 @@
   letter-spacing: 0.03em;
 }
 
-.team-list .list-text {
+.team-list__text {
   margin-top: 0;
   margin-bottom: 16px;
   margin-left: 0;
@@ -68,13 +61,13 @@
   letter-spacing: 0.03em;
 }
 
-.team .social-block {
+.team-list__social-block {
   @extend %flex-center;
 
   list-style: none;
 }
 
-.team .social-link {
+.team-list__social-link {
   @extend %flex-center;
   width: 44px;
   height: 44px;

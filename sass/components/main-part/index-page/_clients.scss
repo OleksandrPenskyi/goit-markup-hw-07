@@ -1,25 +1,15 @@
-.clients {
+.clients--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.clients .title {
-  margin-top: 0;
-  margin-bottom: 50px;
-  text-align: center;
+// .section-title and .section-title--mb at __work.scss
 
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  color: $primary-text-color;
-}
-
-.clients .clients-block {
+.clients-block {
   display: flex;
 }
 
-.clients-block .clients-link {
+.clients-block__link {
   @extend %flex-center;
 
   width: calc((100% - 150px) / 6);

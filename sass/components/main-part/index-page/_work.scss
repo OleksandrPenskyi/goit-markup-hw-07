@@ -2,15 +2,18 @@
   padding-bottom: 94px;
 }
 
-.work .title {
-  margin-top: 0;
-  margin-bottom: 50px;
+.section-title {
   text-align: center;
-
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  color: $primary-text-color;
+}
+
+.section-title--mb {
+  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .work .work-list {
