@@ -1,29 +1,18 @@
-.work {
+.work--pb {
   padding-bottom: 94px;
 }
 
-.section-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  color: $primary-text-color;
-}
+// .section-title for work / team / clients sections at _base.scss
+// .section-title--mb for work / team / clients sections at _base.scss
 
-.section-title--mb {
-  margin-bottom: 50px;
-  margin-top: 0;
-}
-
-.work .work-list {
+.work-list {
   display: flex;
   flex-wrap: wrap; /* если теоретически добавят еще картинок */
 
   @extend %list-reset;
 }
 
-.work-list .list-item {
+.work-list__item {
   position: relative;
 
   width: calc((100% - 60px) / 3);
@@ -35,7 +24,7 @@
 }
 
 /* *for position-block */
-.work-list .position-block {
+.work-list__position-block {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -51,7 +40,7 @@
 }
 
 /* *for position-text */
-.work-list .position-text {
+.work-list__position-text {
   margin: 0;
 
   font-family: $main-font-family;

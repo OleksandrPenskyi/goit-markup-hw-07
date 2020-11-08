@@ -13,13 +13,13 @@
   overflow: hidden;
 }
 
-.advantages, .work .work-list, .team-list, .examples {
+.adv-list, .work-list, .team-list, .examples {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.form-field .form-policy, .form-policy .policy-label, .advantages-box, .work-list .position-block, .team-list__social-block, .team-list__social-link, .clients-block__link, .social-block, .social-block__social-link {
+.form-field .form-policy, .form-policy .policy-label, .adv-list__box, .work-list__position-block, .team-list__social-block, .team-list__social-link, .clients-block__link, .social-block, .social-block__social-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,13 +49,26 @@ img {
   display: block;
 }
 
-/* *main container */
 .container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: #212121;
+}
+
+.section-title--mb {
+  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .header {
@@ -508,12 +521,12 @@ img {
   color: #ffffff;
 }
 
-.adv {
+.adv--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.advantages {
+.adv-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -522,15 +535,15 @@ img {
   /*вдруг добавят еще разделов*/
 }
 
-.advantages .advantages-list {
+.adv-list__item {
   width: calc((100% - 90px) / 4);
 }
 
-.advantages .advantages-list:not(:nth-child(4n)) {
+.adv-list__item:not(:nth-child(4n)) {
   margin-right: 30px;
 }
 
-.advantages-box {
+.adv-list__box {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
@@ -538,7 +551,7 @@ img {
   background: #f5f4fa;
 }
 
-.advantages .advantages-title {
+.adv-list__title {
   margin-top: 0;
   margin-bottom: 10px;
   font-weight: 700;
@@ -548,7 +561,7 @@ img {
   text-transform: uppercase;
 }
 
-.advantages .advantages-text {
+.adv-list__text {
   margin: 0;
   font-weight: 400;
   font-size: 14px;
@@ -557,25 +570,11 @@ img {
   color: #757575;
 }
 
-.work {
+.work--pb {
   padding-bottom: 94px;
 }
 
-.section-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  color: #212121;
-}
-
-.section-title--mb {
-  margin-bottom: 50px;
-  margin-top: 0;
-}
-
-.work .work-list {
+.work-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,18 +583,18 @@ img {
   /* если теоретически добавят еще картинок */
 }
 
-.work-list .list-item {
+.work-list__item {
   position: relative;
   width: calc((100% - 60px) / 3);
   /* дать всем эдементам правый маржин, кроме каждого кратного 3-м (3й, 6й, 9й) */
 }
 
-.work-list .list-item:not(:nth-child(3n)) {
+.work-list__item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
 
 /* *for position-block */
-.work-list .position-block {
+.work-list__position-block {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -606,7 +605,7 @@ img {
 }
 
 /* *for position-text */
-.work-list .position-text {
+.work-list__position-text {
   margin: 0;
   font-family: Roboto, sans-serif;
   font-weight: 700;
