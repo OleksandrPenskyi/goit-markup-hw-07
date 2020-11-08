@@ -1,4 +1,4 @@
-.works {
+.works--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -8,24 +8,26 @@
 }
 
 // Фильтры
-.works .filter {
+.filter {
   display: flex;
   justify-content: center;
 
+  list-style: none;
+}
+
+.filter--mp {
   margin-top: 0;
   margin-bottom: 34px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-
-  list-style: none;
 }
 
-.filter .filter-list:not(:last-child) {
+.filter__list:not(:last-child) {
   margin-right: 8px;
 }
 
-.filter-link {
+.filter__button {
   padding: 6px 22px;
   border-radius: 4px;
 

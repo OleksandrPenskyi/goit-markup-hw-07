@@ -1,9 +1,11 @@
 /* !Футер */
 .footer {
+  background: $bg-main-color;
+}
+
+.footer--ptb {
   padding-top: 60px;
   padding-bottom: 60px;
-
-  background: $bg-main-color;
 }
 
 // Общий flex-контейнер для всего Footer

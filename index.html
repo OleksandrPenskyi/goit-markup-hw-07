@@ -63,24 +63,23 @@
 
     <!-- !Основной контент сайта -->
     <main>
-      <!-- todoСекция Герой -->
-
+      <!-- !Секция Герой -->
       <section class="hero">
-        <div class="hero-container">
-          <h1 class="title">
+        <div class="hero-container hero-container--size">
+          <h1 class="hero__title">
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
 
           <!-- Кнопка окрытия модального окна -->
-          <button class="open-btn" type="button" data-modal-open>Заказать услугу</button>
+          <button class="hero__open-btn" type="button" data-modal-open>Заказать услугу</button>
 
           <!-- Модальное окно -->
-          <div class="backdrop is-hidden" data-modal>
-            <div class="modal">
+          <div class="backdrop is-hidden backdrop--pos-size" data-modal>
+            <div class="modal modal--pos-size">
               <!-- Кнопка закрытия модального окна -->
-              <button class="closed-btn" type="button" data-modal-close>
-                <svg class="closed-svg" width="11" height="11">
+              <button class="modal__closed-btn" type="button" data-modal-close>
+                <svg class="modal__closed-svg" width="11" height="11">
                   <use href="./images/symbols.svg#icon-closed-pointer"></use>
                 </svg>
               </button>
@@ -88,107 +87,125 @@
               <!-- Form на модалке -->
               <form class="form-field">
                 <!-- Титул Модального окна -->
-                <b class="modal-title">Оставьте свои данные, мы вам перезвоним</b>
+                <b class="form-field__title">Оставьте свои данные, мы вам перезвоним</b>
 
-                <div class="form-block" role="group">
-                  <label class="form-label" for="name">Имя</label>
-                  <input class="form-input" type="text" name="name" id="name" placeholder=" " />
-                  <svg class="form-svg" width="18" height="18">
+                <div class="form-block form-block--mb" role="group">
+                  <label class="form-block__label" for="name">Имя</label>
+                  <input
+                    class="form-block__input"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder=" "
+                  />
+                  <svg class="form-block__svg" width="18" height="18">
                     <use href="./images/symbols.svg#icon-person-modal"></use>
                   </svg>
                 </div>
 
-                <div class="form-block" role="group">
-                  <label class="form-label" for="tel">Телефон</label>
-                  <input class="form-input" type="tel" name="tel" id="tel" placeholder=" " />
-                  <svg class="form-svg" width="18" height="18">
+                <div class="form-block form-block--mb" role="group">
+                  <label class="form-block__label" for="tel">Телефон</label>
+                  <input class="form-block__input" type="tel" name="tel" id="tel" placeholder=" " />
+                  <svg class="form-block__svg" width="18" height="18">
                     <use href="./images/symbols.svg#icon-phone-modal"></use>
                   </svg>
                 </div>
 
-                <div class="form-block" role="group">
-                  <label class="form-label" for="e-mail">Почта</label>
-                  <input class="form-input" type="email" name="email" id="e-mail" placeholder=" " />
-                  <svg class="form-svg" width="18" height="18">
+                <div class="form-block form-block--mb" role="group">
+                  <label class="form-block__label" for="e-mail">Почта</label>
+                  <input
+                    class="form-block__input"
+                    type="email"
+                    name="email"
+                    id="e-mail"
+                    placeholder=" "
+                  />
+                  <svg class="form-block__svg" width="18" height="18">
                     <use href="./images/symbols.svg#icon-email-modal"></use>
                   </svg>
                 </div>
 
                 <!-- Поле textarea -->
-                <div class="form-textarea" role="group">
-                  <label class="label-comment" for="comment">Комментарий</label>
-                  <textarea name="comment" id="comment" placeholder=" "></textarea>
-                  <label class="label-placeholder" for="comment">Введите текст</label>
+                <div class="form-textarea form-textarea--mb" role="group">
+                  <label class="form-textarea__label-comment" for="comment">Комментарий</label>
+                  <textarea
+                    class="form-textarea__textarea"
+                    name="comment"
+                    id="comment"
+                    placeholder=" "
+                  ></textarea>
+                  <label class="form-textarea__label-placeholder" for="comment"
+                    >Введите текст</label
+                  >
                 </div>
 
                 <!-- Кастомный чекбокс -->
-                <div class="form-policy" role="group">
-                  <label class="policy-label">
-                    <input class="policy-checkbox" type="checkbox" name="policy" />
-                    <span class="icon-check"
+                <div class="form-policy form-policy--mb" role="group">
+                  <label class="form-policy__label">
+                    <input class="form-policy__checkbox" type="checkbox" name="policy" />
+                    <span class="form-policy__icon-check"
                       >Соглашаюсь с рассылкой и принимаю &nbsp;
-                      <a href="#">Условия договора</a></span
+                      <a class="form-policy__contract-terms" href="#">Условия договора</a></span
                     >
                   </label>
                 </div>
 
                 <!-- Кнопка отправки формы -->
-                <button class="btn-send" type="submit">Отправить</button>
+                <button class="btn-send btn-send--size" type="submit">Отправить</button>
               </form>
               <!--  -->
             </div>
           </div>
         </div>
       </section>
-
       <!-- !Наши преимущества -->
-      <section class="adv adv--ptb">
+      <section class="advantages advantages--ptb">
         <div class="container">
           <!-- Данный Заголовок "h2" тут необязателен, но для семантики будет полезен. Скроем его. -->
           <h2 class="title-hidden">Наши преимущества</h2>
 
-          <ul class="adv-list">
-            <li class="adv-list__item">
-              <div class="adv-list__box">
+          <ul class="advantages-list">
+            <li class="advantages-list__item">
+              <div class="advantages-list__box">
                 <svg width="70" height="70">
                   <use href="./images/symbols.svg#icon-antenna"></use>
                 </svg>
               </div>
-              <h3 class="adv-list__title">Внимание к деталям</h3>
-              <p class="adv-list__text">
+              <h3 class="advantages-list__title">Внимание к деталям</h3>
+              <p class="advantages-list__text">
                 Идейные соображения, а также начало повседневной работы по формированию позиции.
               </p>
             </li>
-            <li class="adv-list__item">
-              <div class="adv-list__box">
+            <li class="advantages-list__item">
+              <div class="advantages-list__box">
                 <svg width="70" height="70">
                   <use href="./images/symbols.svg#icon-clock"></use>
                 </svg>
               </div>
-              <h3 class="adv-list__title">Пунктуальность</h3>
-              <p class="adv-list__text">
+              <h3 class="advantages-list__title">Пунктуальность</h3>
+              <p class="advantages-list__text">
                 Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
               </p>
             </li>
-            <li class="adv-list__item">
-              <div class="adv-list__box">
+            <li class="advantages-list__item">
+              <div class="advantages-list__box">
                 <svg width="70" height="70">
                   <use href="./images/symbols.svg#icon-diagram"></use>
                 </svg>
               </div>
-              <h3 class="adv-list__title">Планирование</h3>
-              <p class="adv-list__text">
+              <h3 class="advantages-list__title">Планирование</h3>
+              <p class="advantages-list__text">
                 Равным образом консультация с широким активом в значительной степени обуславливает.
               </p>
             </li>
-            <li class="adv-list__item">
-              <div class="adv-list__box">
+            <li class="advantages-list__item">
+              <div class="advantages-list__box">
                 <svg width="70" height="70">
                   <use href="./images/symbols.svg#icon-astronaut"></use>
                 </svg>
               </div>
-              <h3 class="adv-list__title">Современные технологии</h3>
-              <p class="adv-list__text">
+              <h3 class="advantages-list__title">Современные технологии</h3>
+              <p class="advantages-list__text">
                 Значимость этих проблем настолько очевидна, что реализация плановых заданий.
               </p>
             </li>
@@ -432,7 +449,7 @@
     </main>
 
     <!-- !Footer сайта -->
-    <footer class="footer">
+    <footer class="footer footer--ptb">
       <div class="container">
         <!-- Общий flex-контейнер для всего Footer -->
         <div class="footer-flex">

@@ -1,4 +1,4 @@
-.adv--ptb {
+.advantages--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -7,14 +7,13 @@
   @extend %visually-hidden;
 }
 
-.adv-list {
+.advantages-list {
   display: flex;
   flex-wrap: wrap; /*вдруг добавят еще разделов*/
-
   @extend %list-reset;
 }
 
-.adv-list__item {
+.advantages-list__item {
   width: calc((100% - 90px) / 4);
 
   &:not(:nth-child(4n)) {
@@ -23,7 +22,7 @@
 }
 
 //  Блок с SVG
-.adv-list__box {
+.advantages-list__box {
   @extend %flex-center;
   width: 270px;
   height: 120px;
@@ -33,7 +32,7 @@
   background: $bg-secondary-color;
 }
 
-.adv-list__title {
+.advantages-list__title {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -44,7 +43,7 @@
   text-transform: uppercase;
 }
 
-.adv-list__text {
+.advantages-list__text {
   margin: 0;
 
   font-weight: 400;

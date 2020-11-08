@@ -5,7 +5,7 @@
   @extend %list-reset;
 }
 
-.examples .examples-list {
+.examples__list {
   /* Ширина элемента списка в % */
   width: calc((100% - 60px) / 3);
 
@@ -31,13 +31,13 @@
 
 /* Прятающийся блок */
 /* Относительно этого блока поиционируем .transormation-box */
-.examples .position-box {
+.examples__position-box {
   position: relative;
   overflow: hidden;
 }
 
 // Блок спрятан
-.examples .transormation-box {
+.examples__transormation-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -56,19 +56,19 @@
 }
 
 // Блок появляется
-.examples .examples-link {
+.examples__link {
   display: block;
 
   text-decoration: none;
 
   /* .transormation-box вылазит снизу при наведении на li */
-  &:hover .transormation-box,
-  &:focus .transormation-box {
+  &:hover .examples__transormation-box,
+  &:focus .examples__transormation-box {
     transform: translateY(0);
   }
 }
 
-.transormation-box .position-text {
+.examples__position-text {
   margin: 0;
 
   font-weight: 400;
@@ -79,7 +79,7 @@
 }
 /* *CLOSED прятающийся блок */
 
-.examples .text-block {
+.examples__text-block {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
@@ -90,7 +90,7 @@
   border-right: 1px solid $border-main-color;
 }
 
-.examples-title {
+.examples__title {
   margin-top: 0;
   margin-bottom: 4px;
 
@@ -100,7 +100,7 @@
   letter-spacing: 0.06em;
 }
 
-.examples-text {
+.examples__text {
   margin: 0;
 
   color: $secondary-text-color;

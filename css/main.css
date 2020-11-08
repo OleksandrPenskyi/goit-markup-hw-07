@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Спрятать (не учавствует в геометрии), но все еще виден для читалок */
-.form-textarea textarea:focus + .label-placeholder,
-.form-textarea textarea:not(:placeholder-shown) + .label-placeholder, .form-policy .policy-checkbox, .title-hidden, .subscribe__form-input:focus + .subscribe__form-label,
+.form-textarea__textarea:focus + .form-textarea__label-placeholder,
+.form-textarea__textarea:not(:placeholder-shown) + .form-textarea__label-placeholder, .form-policy__checkbox, .title-hidden, .subscribe__form-input:focus + .subscribe__form-label,
 .subscribe__form-input:not(:placeholder-shown) + .subscribe__form-label {
   position: absolute;
   width: 1px;
@@ -13,13 +13,13 @@
   overflow: hidden;
 }
 
-.adv-list, .work-list, .team-list, .examples {
+.advantages-list, .work-list, .team-list, .examples {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.form-field .form-policy, .form-policy .policy-label, .adv-list__box, .work-list__position-block, .team-list__social-block, .team-list__social-link, .clients-block__link, .social-block, .social-block__social-link {
+.form-policy, .form-policy__label, .advantages-list__box, .work-list__position-block, .team-list__social-block, .team-list__social-link, .clients-block__link, .social-block, .social-block__social-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,18 +213,21 @@ img {
 }
 
 .hero-container {
-  max-width: 1600px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 200px;
   background-color: #2f303a;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url("../images/main-bg.jpg");
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/main-bg.jpg");
   background-position: center;
 }
 
-.hero .title {
+.hero-container--size {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 200px;
+}
+
+.hero__title {
   margin-top: 0;
   margin-bottom: 30px;
   font-weight: 900;
@@ -235,7 +238,7 @@ img {
   color: #ffffff;
 }
 
-.hero .open-btn {
+.hero__open-btn {
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -254,13 +257,6 @@ img {
 
 /* *modal window */
 .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Чтобы модальное окно было выше других эллементов страницы */
-  z-index: 100;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
   /* При появлении backdrop, фон появляется плавно */
@@ -268,13 +264,23 @@ img {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop--pos-size {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Чтобы модальное окно было выше других эллементов страницы */
+  z-index: 100;
+}
+
 .backdrop.is-hidden {
   opacity: 0;
   /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
   pointer-events: none;
+  /* *При выключенном backdrop, свойства modal такие */
 }
 
-/* *При выключенном backdrop, свойства modal такие */
 .backdrop.is-hidden .modal {
   -webkit-transform: translate(-50%, -50%) scale(1.2);
           transform: translate(-50%, -50%) scale(1.2);
@@ -282,16 +288,6 @@ img {
 
 /* *Modal активное */
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  height: 581px;
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
   background: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -302,7 +298,20 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal .closed-btn {
+.modal--pos-size {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  width: 528px;
+  height: 581px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.modal__closed-btn {
   /* Position относительно .modal */
   position: absolute;
   top: 8px;
@@ -314,12 +323,12 @@ img {
   background: #ffffff;
 }
 
-.modal .closed-btn:hover .closed-svg,
-.modal .closed-btn:focus .closed-svg {
+.modal__closed-btn:hover .modal__closed-svg,
+.modal__closed-btn:focus .modal__closed-svg {
   fill: #2196f3;
 }
 
-.modal .closed-svg {
+.modal__closed-svg {
   /* Position Позиционируем по центру относительно круга (.closed-btn)*/
   position: absolute;
   top: 50%;
@@ -331,7 +340,7 @@ img {
 }
 
 /* Form для модального окна */
-.backdrop .modal-title {
+.form-field__title {
   display: block;
   margin-bottom: 12px;
   font-weight: 700;
@@ -354,6 +363,9 @@ img {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.form-block--mb {
   margin-bottom: 10px;
 }
 
@@ -370,11 +382,14 @@ img {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.form-textarea--mb {
   margin-bottom: 20px;
 }
 
-.form-label,
-.label-comment {
+.form-block__label,
+.form-textarea__label-comment {
   margin-top: 0;
   margin-bottom: 4px;
   font-weight: 400;
@@ -384,7 +399,7 @@ img {
   color: #757575;
 }
 
-.form-input {
+.form-block__input {
   width: 100%;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -398,17 +413,17 @@ img {
   /* при фокусе на input (и при набраном тексте) происходит смена цвета icon svg */
 }
 
-.form-input:focus, .form-input:not(:placeholder-shown) {
+.form-block__input:focus, .form-block__input:not(:placeholder-shown) {
   outline: none;
   border-color: #2196f3;
 }
 
-.form-input:focus + .form-svg,
-.form-input:not(:placeholder-shown) + .form-svg {
+.form-block__input:focus + .form-block__svg,
+.form-block__input:not(:placeholder-shown) + .form-block__svg {
   fill: #2196f3;
 }
 
-.form-svg {
+.form-block__svg {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -416,7 +431,7 @@ img {
   pointer-events: none;
 }
 
-.form-textarea textarea {
+.form-textarea__textarea {
   resize: none;
   width: 100%;
   height: 120px;
@@ -432,12 +447,12 @@ img {
   /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
 }
 
-.form-textarea textarea:focus, .form-textarea textarea:not(:placeholder-shown) {
+.form-textarea__textarea:focus, .form-textarea__textarea:not(:placeholder-shown) {
   outline: none;
   border-color: #2196f3;
 }
 
-.form-textarea .label-placeholder {
+.form-textarea__label-placeholder {
   position: absolute;
   top: 32px;
   left: 17px;
@@ -449,22 +464,22 @@ img {
 }
 
 /* Кастомный чекбокс */
-.form-field .form-policy {
+.form-policy--mb {
   margin-bottom: 30px;
 }
 
 /* Скрываем стандартный чекбокс */
-.form-policy .policy-checkbox {
+.form-policy__checkbox {
   /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
   /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
 }
 
-.form-policy .policy-checkbox:focus + .icon-check::before,
-.form-policy .policy-checkbox:hover + .icon-check::before {
+.form-policy__checkbox:focus + .form-policy__icon-check::before,
+.form-policy__checkbox:hover + .form-policy__icon-check::before {
   border-color: #2196f3;
 }
 
-.form-policy .policy-checkbox:checked + .icon-check::before {
+.form-policy__checkbox:checked + .form-policy__icon-check::before {
   background-color: #2196f3;
   background-image: url("../images/icon-check.svg");
   background-size: contain;
@@ -472,7 +487,7 @@ img {
   background-origin: border-box;
 }
 
-.icon-check {
+.form-policy__icon-check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -487,7 +502,7 @@ img {
   /* Оформляем кастомный чекбокс */
 }
 
-.icon-check::before {
+.form-policy__icon-check::before {
   display: inline-block;
   content: '';
   width: 16px;
@@ -499,16 +514,12 @@ img {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.policy-label a {
+.form-policy__contract-terms {
   color: #2196f3;
 }
 
 /* Кнопка отправки формы */
-.form-field .btn-send {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 56px;
-  padding-right: 55px;
+.btn-send {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -521,12 +532,19 @@ img {
   color: #ffffff;
 }
 
-.adv--ptb {
+.btn-send--size {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 56px;
+  padding-right: 55px;
+}
+
+.advantages--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.adv-list {
+.advantages-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -535,15 +553,15 @@ img {
   /*вдруг добавят еще разделов*/
 }
 
-.adv-list__item {
+.advantages-list__item {
   width: calc((100% - 90px) / 4);
 }
 
-.adv-list__item:not(:nth-child(4n)) {
+.advantages-list__item:not(:nth-child(4n)) {
   margin-right: 30px;
 }
 
-.adv-list__box {
+.advantages-list__box {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
@@ -551,7 +569,7 @@ img {
   background: #f5f4fa;
 }
 
-.adv-list__title {
+.advantages-list__title {
   margin-top: 0;
   margin-bottom: 10px;
   font-weight: 700;
@@ -561,7 +579,7 @@ img {
   text-transform: uppercase;
 }
 
-.adv-list__text {
+.advantages-list__text {
   margin: 0;
   font-weight: 400;
   font-size: 14px;
@@ -730,31 +748,34 @@ img {
   fill: #2196f3;
 }
 
-.works {
+.works--ptb {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-.works .filter {
+.filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  list-style: none;
+}
+
+.filter--mp {
   margin-top: 0;
   margin-bottom: 34px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  list-style: none;
 }
 
-.filter .filter-list:not(:last-child) {
+.filter__list:not(:last-child) {
   margin-right: 8px;
 }
 
-.filter-link {
+.filter__button {
   padding: 6px 22px;
   border-radius: 4px;
   text-decoration: none;
@@ -772,7 +793,7 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filter-link:hover, .filter-link:focus {
+.filter__button:hover, .filter__button:focus {
   background-color: #2196f3;
   color: #ffffff;
   border-color: transparent;
@@ -788,7 +809,7 @@ img {
       flex-wrap: wrap;
 }
 
-.examples .examples-list {
+.examples__list {
   /* Ширина элемента списка в % */
   width: calc((100% - 60px) / 3);
   background: #ffffff;
@@ -800,27 +821,27 @@ img {
   /* нижний маржин для всех элементов списка, кроме 3-х последних элементов списка*/
 }
 
-.examples .examples-list:not(:nth-child(3n)) {
+.examples__list:not(:nth-child(3n)) {
   margin-right: 30px;
 }
 
-.examples .examples-list:not(:nth-last-child(-n + 3)) {
+.examples__list:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
 
-.examples .examples-list:hover, .examples .examples-list:focus {
+.examples__list:hover, .examples__list:focus {
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* Прятающийся блок */
 /* Относительно этого блока поиционируем .transormation-box */
-.examples .position-box {
+.examples__position-box {
   position: relative;
   overflow: hidden;
 }
 
-.examples .transormation-box {
+.examples__transormation-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -839,19 +860,19 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.examples .examples-link {
+.examples__link {
   display: block;
   text-decoration: none;
   /* .transormation-box вылазит снизу при наведении на li */
 }
 
-.examples .examples-link:hover .transormation-box,
-.examples .examples-link:focus .transormation-box {
+.examples__link:hover .examples__transormation-box,
+.examples__link:focus .examples__transormation-box {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-.transormation-box .position-text {
+.examples__position-text {
   margin: 0;
   font-weight: 400;
   font-size: 18px;
@@ -861,7 +882,7 @@ img {
 }
 
 /* *CLOSED прятающийся блок */
-.examples .text-block {
+.examples__text-block {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 24px;
@@ -871,7 +892,7 @@ img {
   border-right: 1px solid #eeeeee;
 }
 
-.examples-title {
+.examples__title {
   margin-top: 0;
   margin-bottom: 4px;
   font-weight: 700;
@@ -880,7 +901,7 @@ img {
   letter-spacing: 0.06em;
 }
 
-.examples-text {
+.examples__text {
   margin: 0;
   color: #757575;
   font-weight: 400;
@@ -891,9 +912,12 @@ img {
 
 /* !Футер */
 .footer {
+  background: #2f303a;
+}
+
+.footer--ptb {
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #2f303a;
 }
 
 .footer-flex {

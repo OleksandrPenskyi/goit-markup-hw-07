@@ -1,5 +1,13 @@
 /* *modal window */
 .backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  /* При появлении backdrop, фон появляется плавно */
+  transition: opacity $transition-duration $transition-timing-formula;
+}
+
+.backdrop--pos-size {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,11 +17,6 @@
 
   /* Чтобы модальное окно было выше других эллементов страницы */
   z-index: 100;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-
-  /* При появлении backdrop, фон появляется плавно */
-  transition: opacity $transition-duration $transition-timing-formula;
 }
 
 .backdrop.is-hidden {
@@ -21,15 +24,24 @@
 
   /* чтобы пропадала подложка backdrop и под ним можно было что-то нажать */
   pointer-events: none;
-}
 
-/* *При выключенном backdrop, свойства modal такие */
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.2);
+  /* *При выключенном backdrop, свойства modal такие */
+  & .modal {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
 }
 
 /* *Modal активное */
 .modal {
+  background: $bg-card-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transition: transform $transition-duration $transition-timing-formula;
+}
+
+.modal--pos-size {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,16 +52,9 @@
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
-
-  background: $bg-card-color;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-
-  transition: transform $transition-duration $transition-timing-formula;
 }
 
-.modal .closed-btn {
+.modal__closed-btn {
   /* Position относительно .modal */
   position: absolute;
   top: 8px;
@@ -62,13 +67,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: $bg-card-color;
 
-  &:hover .closed-svg,
-  &:focus .closed-svg {
+  &:hover .modal__closed-svg,
+  &:focus .modal__closed-svg {
     fill: $main-blue-color;
   }
 }
 
-.modal .closed-svg {
+.modal__closed-svg {
   /* Position Позиционируем по центру относительно круга (.closed-btn)*/
   position: absolute;
   top: 50%;
@@ -79,7 +84,7 @@
 }
 
 /* Form для модального окна */
-.backdrop .modal-title {
+.form-field__title {
   display: block;
   margin-bottom: 12px;
 
@@ -97,7 +102,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
 
+.form-block--mb {
   margin-bottom: 10px;
 }
 
@@ -108,12 +115,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
 
+.form-textarea--mb {
   margin-bottom: 20px;
 }
 
-.form-label,
-.label-comment {
+.form-block__label,
+.form-textarea__label-comment {
   margin-top: 0;
   margin-bottom: 4px;
 
@@ -124,7 +133,7 @@
   color: $secondary-text-color;
 }
 
-.form-input {
+.form-block__input {
   width: 100%;
   padding-top: 11px;
   padding-bottom: 11px;
@@ -143,13 +152,13 @@
   }
 
   /* при фокусе на input (и при набраном тексте) происходит смена цвета icon svg */
-  &:focus + .form-svg,
-  &:not(:placeholder-shown) + .form-svg {
+  &:focus + .form-block__svg,
+  &:not(:placeholder-shown) + .form-block__svg {
     fill: $main-blue-color;
   }
 }
 
-.form-svg {
+.form-block__svg {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -158,7 +167,7 @@
   pointer-events: none;
 }
 
-.form-textarea textarea {
+.form-textarea__textarea {
   resize: none;
   width: 100%;
   height: 120px;
@@ -180,14 +189,14 @@
   }
 
   /* Когда textarea в фокусе и набран текст (т.е. нет placeholder), label-placeholder исчезает */
-  &:focus + .label-placeholder,
-  &:not(:placeholder-shown) + .label-placeholder {
+  &:focus + .form-textarea__label-placeholder,
+  &:not(:placeholder-shown) + .form-textarea__label-placeholder {
     @extend %visually-hidden;
   }
 }
 
 // пункт 'Введите текст'
-.form-textarea .label-placeholder {
+.form-textarea__label-placeholder {
   position: absolute;
   top: 32px;
   left: 17px;
@@ -200,27 +209,30 @@
 }
 
 /* Кастомный чекбокс */
-.form-field .form-policy {
+.form-policy {
   @extend %flex-center;
+}
+
+.form-policy--mb {
   margin-bottom: 30px;
 }
 
-.form-policy .policy-label {
+.form-policy__label {
   @extend %flex-center;
 }
 
 /* Скрываем стандартный чекбокс */
-.form-policy .policy-checkbox {
+.form-policy__checkbox {
   @extend %visually-hidden;
 
   /* Когда чекбокс в фокусе, или наведен Ховер, то кастомный чекбокс подсвечивается синей рамкой  */
-  &:focus + .icon-check::before,
-  &:hover + .icon-check::before {
+  &:focus + .form-policy__icon-check::before,
+  &:hover + .form-policy__icon-check::before {
     border-color: $main-blue-color;
   }
 
   /* Когда кастомный чекбокс зачекан, то он с синей птичкой */
-  &:checked + .icon-check::before {
+  &:checked + .form-policy__icon-check::before {
     background-color: $main-blue-color;
     background-image: url('../images/icon-check.svg');
     background-size: contain;
@@ -229,7 +241,7 @@
   }
 }
 
-.icon-check {
+.form-policy__icon-check {
   display: flex;
   align-items: center;
 
@@ -254,17 +266,12 @@
   }
 }
 
-.policy-label a {
+.form-policy__contract-terms {
   color: $main-blue-color;
 }
 
 /* Кнопка отправки формы */
-.form-field .btn-send {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 56px;
-  padding-right: 55px;
-
+.btn-send {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -274,4 +281,11 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   color: $third-text-color;
+}
+
+.btn-send--size {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 56px;
+  padding-right: 55px;
 }
