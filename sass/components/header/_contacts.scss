@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.contacts .link {
+.contacts__link {
   display: inline-flex;
   align-items: center;
   padding-top: 32px;
@@ -36,6 +36,6 @@
 }
 
 /* Отступ SVG от ссылки */
-.contacts .icon {
+.contacts__icon {
   margin-right: 10px;
 }

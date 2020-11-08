@@ -1,15 +1,13 @@
-.footer-address {
+.footer-address--box {
   margin-right: 70px;
 }
 
 // .logo in the Header
-.logo .studio-white {
+.logo__studio-white {
   color: $third-text-color;
 }
 
-.footer .address {
-  margin-top: 20px;
-
+.address {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -17,11 +15,16 @@
   letter-spacing: 0.03em;
 }
 
-.address .map {
+// Модификатор блока .address с внешней геометрией
+.address--box {
+  margin-top: 20px;
+}
+
+.address__map {
   color: $third-text-color;
 }
 
-.address .link {
+.address__link {
   display: inline-block;
   margin-top: 9px;
 

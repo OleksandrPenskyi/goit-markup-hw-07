@@ -4,18 +4,9 @@
   margin-left: auto;
 }
 
-.subscribe-title {
-  margin-bottom: 20px;
+// footer-title and footer-title--mb at _social.scss
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: $bg-third-color;
-}
-
-.subscribe .subscribe-form {
+.subscribe__form {
   position: relative;
 
   display: flex;
@@ -23,7 +14,7 @@
   align-items: center;
 }
 
-.subscribe .form-input {
+.subscribe__form-input {
   display: flex;
   align-items: center;
 
@@ -46,13 +37,13 @@
   color: $subscribe-form-color;
 
   /* Когда input активен или исчез плейсхолдер - (label) надпись E-mail скрывается  */
-  &:focus + .form-label,
-  &:not(:placeholder-shown) + .form-label {
+  &:focus + .subscribe__form-label,
+  &:not(:placeholder-shown) + .subscribe__form-label {
     @extend %visually-hidden;
   }
 }
 
-.subscribe .form-label {
+.subscribe__form-label {
   position: absolute;
   top: 50%;
   left: 16px;
@@ -70,7 +61,7 @@
 }
 
 /* Кнопка отправки  */
-.subscribe .form-btn {
+.subscribe__form-btn {
   display: flex;
   align-items: center;
 
@@ -90,6 +81,6 @@
   border: none;
 }
 
-.form-btn svg {
+.subscribe__svg {
   margin-left: 10px;
 }

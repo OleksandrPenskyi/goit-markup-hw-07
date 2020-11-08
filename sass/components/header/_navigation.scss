@@ -1,5 +1,5 @@
 // Общая обертка для Логотипа + Меню
-.nav-flex {
+.nav {
   display: flex;
   align-items: center;
 }
@@ -15,13 +15,13 @@
   color: $main-blue-color;
 }
 
-.logo .studio-black {
+.logo__studio-black {
   color: $primary-text-color;
 }
 // CLOSED Логотип
 
 // Меню
-.nav-list {
+.nav__list {
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
@@ -36,11 +36,11 @@
   list-style: none;
 }
 
-.nav-list .item:not(:last-child) {
+.nav__list-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-list .link {
+.nav__link {
   position: relative;
 
   display: block;
@@ -59,7 +59,7 @@
 }
 
 /* active page */
-.nav-list .link.active {
+.nav__link--active {
   color: $main-blue-color;
 
   /* position (after) for active link*/
